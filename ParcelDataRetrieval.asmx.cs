@@ -90,7 +90,7 @@ namespace AspNetWebServices
             {
                 Sh.Name = dataReader.IsDBNull(0) ? "" : dataReader.GetString(0);
                 Sh.Color = dataReader.IsDBNull(1) ? "" : dataReader.GetString(1);
-                ShD.Weight = dataReader.IsDBNull(2) ? 0 : dataReader.GetDecimal(2);
+                ShD.Weight = !dataReader.IsDBNull(2) ? dataReader.GetDecimal(2) : default(Decimal?);
             }
 
 

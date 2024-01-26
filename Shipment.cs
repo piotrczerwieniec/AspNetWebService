@@ -9,7 +9,7 @@ namespace AspNetWebServices
 {
     //https://learn.microsoft.com/en-us/dotnet/standard/serialization/examples-of-xml-serialization instrukcja wykonania
     [XmlRoot("ShipmentDetails", Namespace = "http://yrdyuqopytsvxrteormorv/com/",
-    IsNullable = true)] //isnullable pokazuje lub ukywa wezel/tag true- pokazuje false-chowa
+    IsNullable = false)] //isnullable pokazuje lub ukywa wezel/tag true- pokazuje false-chowa
     public class Shipment
     {
         [XmlAttribute]
@@ -21,8 +21,9 @@ namespace AspNetWebServices
     }
     public class Details
     {
-
-        public Decimal Weight;
+        //[XmlElement(IsNullable = true)]
+        public Decimal? Weight; 
     }
-
+  
+  
 }
